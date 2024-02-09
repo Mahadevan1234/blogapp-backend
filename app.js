@@ -2,6 +2,7 @@ const express=require("express")
 const cors=require("cors")
 const mongoose=require("mongoose")
 const userrouter=require("./controllers/userRouter")
+const postroute=require("./controllers/postRouter")
 
 //aliasname
 const app=express()
@@ -16,6 +17,7 @@ mongoose.connect("mongodb+srv://mahi17700:mahi123@cluster0.6apodnl.mongodb.net/u
 
 //routing
 app.use("/api/users",userrouter)
+app.use("/api/posts",postroute)
 
 app.listen(3000,()=>{
     console.log("server running...")
